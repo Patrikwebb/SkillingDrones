@@ -1,0 +1,50 @@
+@function rem($px) {
+  @return ($px / $rem-base) + rem;
+}
+@mixin Text112 {
+  font-size: rem($text112);
+}
+
+@mixin Text76 {
+  font-size: rem($text76);
+}
+
+@mixin Text40 {
+  font-size: rem($text40);
+}
+
+@mixin Text36 {
+  font-size: rem($text36);
+}
+
+@mixin Text32 {
+  font-size: rem($text32);
+}
+
+@mixin Text28 {
+  font-size: rem($text28);
+}
+
+@mixin Text24 {
+  font-size: rem($text24);
+}
+
+@mixin Text20 {
+  font-size: rem($text20);
+}
+
+@mixin Text16 {
+  font-size: rem($text16);
+}
+
+@mixin Text14 {
+  font-size: rem($text14);
+}
+
+@mixin Text13 {
+  font-size: rem($text13);
+}
+
+@mixin Text12 {
+  font-size: rem($text12);
+}

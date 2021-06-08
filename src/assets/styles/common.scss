@@ -1,0 +1,162 @@
+// Fonts
+.text40 {
+  @include Text40;
+}
+.text32 {
+  @include Text32;
+}
+.text20 {
+  @include Text20;
+}
+.text14 {
+  @include Text14;
+}
+.text12 {
+  @include Text12;
+}
+.bold {
+  font-weight: bold;
+}
+
+.lineHeight20 {
+  line-height: rem(20);
+}
+
+// Typography
+.textNormal {
+  font-style: normal;
+  font-weight: 600;
+  font-size: rem(12);
+  line-height: rem(18);
+
+  letter-spacing: 0.5px;
+}
+.textBold {
+  font-style: normal;
+  font-weight: bold;
+  font-size: rem(12);
+  line-height: rem(18);
+
+  letter-spacing: 0.5px;
+}
+
+// Colors
+.primary {
+  color: $primary;
+}
+.grey600 {
+  color: $grey600;
+}
+.white {
+  color: $white;
+}
+.black {
+  color: $black;
+}
+
+// Backgrounds
+.clrBackground {
+  background: $background;
+}
+
+// Margin & Paddings
+.my-4 {
+  margin: rem(4) 0;
+}
+.my-16 {
+  margin: rem(16) 0;
+}
+.mx-24 {
+  margin: 0 rem(24);
+}
+.mt-10 {
+  margin-top: rem(10);
+}
+.mt-16 {
+  margin-top: rem(16);
+}
+.mr-8 {
+  margin-right: rem(8);
+}
+.mr-16 {
+  margin-right: rem(16);
+}
+.mr-60 {
+  margin-right: rem(60);
+}
+.mb-20 {
+  margin-bottom: rem(20);
+}
+.ml-24 {
+  margin-left: rem(24);
+}
+.ml-90 {
+  margin-left: rem(90);
+}
+
+.py-4 {
+  padding: rem(4) 0;
+}
+.p-13 {
+  padding: rem(13);
+}
+.pr-30 {
+  padding-right: rem(30);
+}
+.pl-30 {
+  padding-left: rem(30);
+}
+.pt-10 {
+  padding-top: rem(10);
+}
+.pt-20 {
+  padding-top: rem(20);
+}
+.pt-40 {
+  padding-top: rem(40);
+}
+.pt-64 {
+  padding-top: rem(64);
+}
+.pb-30 {
+  padding-bottom: rem(30);
+}
+.pb-40 {
+  padding-bottom: rem(40);
+}
+
+// Width
+.wFull {
+  width: 100%;
+}
+
+// Aligment
+.textAlignCenter {
+  text-align: center;
+}
+
+.letterSpacing15 {
+  letter-spacing: 1.5px;
+}
+
+// Flexbox
+.flex {
+  display: flex;
+}
+.flexOne {
+  flex: 1;
+}
+.flexRow {
+  flex-direction: row;
+}
+.flexColumn {
+  flex-direction: column;
+}
+
+// Alignment
+.itemsCenter {
+  align-items: center;
+}
+.mlAuto {
+  margin-left: auto;
+}

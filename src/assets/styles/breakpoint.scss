@@ -1,0 +1,50 @@
+/* 
+Media Queries for all Devices
+*/
+@mixin bp($point) {
+  // Mobile
+  @if $point==iphoneMini {
+    @media (min-width: 320px) {
+      @content;
+    }
+  }
+
+  @if $point==iphoneSmall {
+    @media (min-width: 350px) {
+      @content;
+    }
+  }
+
+  @if $point==iphoneMedium {
+    @media (min-width: 375px) {
+      @content;
+    }
+  } @else if $point==iphoneLarge {
+    @media (min-width: 414px) {
+      @content;
+    }
+  }
+
+  // Webb
+  @else if $point==webMini {
+    @media (min-width: 500px) {
+      @content;
+    }
+  } @else if $point==webSmall {
+    @media (min-width: 800px) {
+      @content;
+    }
+  } @else if $point==webMedium {
+    @media (min-width: 1080px) {
+      @content;
+    }
+  } @else if $point==webLarge {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  } @else if $point==webXLarge {
+    @media (min-width: 1900px) {
+      @content;
+    }
+  }
+}

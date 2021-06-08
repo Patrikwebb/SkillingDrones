@@ -1,0 +1,132 @@
+.footer {
+  background: $white;
+  color: $primary;
+}
+
+.footerContent {
+  width: 100%;
+
+  @include bp(webMedium) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.footerInnerContent {
+  margin-top: rem(40);
+  margin-left: rem(20);
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
+
+  @include bp(iphoneLarge) {
+    align-items: center;
+  }
+
+  @include bp(webLarge) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    margin-top: rem(60);
+    margin-left: rem(158);
+  }
+}
+
+.footersLists {
+  li {
+    list-style: none;
+    line-height: 1;
+    padding-top: rem(14);
+
+    a {
+      @include Text12;
+      font-style: normal;
+      font-weight: 500;
+
+      color: $black;
+
+      line-height: rem(21);
+
+      text-decoration: none;
+      transition: ease 0.2s;
+
+      &:hover {
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.item {
+  display: block;
+  margin-bottom: rem(20);
+
+  @include bp(iphoneLarge) {
+    display: flex;
+    flex: 1;
+  }
+
+  @include bp(webLarge) {
+    display: flex;
+    flex: 1;
+  }
+
+  div {
+    margin-left: rem(36);
+    margin-right: rem(100);
+
+    @include bp(iphoneLarge) {
+      margin-left: rem(0);
+    }
+
+    p {
+      @include Text14;
+      font-weight: normal;
+
+      line-height: 19px;
+      letter-spacing: -0.17;
+
+      text-transform: uppercase;
+    }
+  }
+}
+
+.item:first {
+  border-right: 1px solid $background;
+}
+
+.companyText {
+  @include Text12;
+
+  color: $black;
+
+  margin-left: rem(36);
+  margin-right: rem(0);
+
+  line-height: rem(19);
+
+  letter-spacing: -0.17;
+
+  width: rem(200);
+
+  @include bp(iphoneLarge) {
+    margin-left: rem(90);
+    margin-right: rem(60);
+  }
+}
+
+.copyright {
+  @include Text12;
+
+  display: flex;
+  justify-content: center;
+
+  color: $black;
+  opacity: 0.5;
+
+  padding: rem(40) 0 rem(30) 0;
+
+  border-top: 1px solid $background;
+}

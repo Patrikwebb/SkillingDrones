@@ -1,0 +1,20 @@
+@import "../fonts/stylesheet.css";
+@import "normalize.scss";
+@import "breakpoint.scss";
+@import "variables.scss";
+@import "utils.scss";
+@import "common.scss";
+
+* {
+  font-size: 10px;
+  color: $white;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+button:focus {
+  outline: 0;
+}
