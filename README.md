@@ -41,23 +41,23 @@ Common styles is inherit from https://tailwindcss.com/
 
 ### TODOs
 
-[] - Font
-[] - Clean up components
-[] - Clean up styling
-[] - Add table component
-[] - Responsive design / Header
-[] - Responsive design / Search field
-[] - Social media footer
-[] - API connection
-[] - Icon color on Burger menu
-[] - Social media footer in Burger menu
-[] - Searchable input field
-[] - Dropdown with sort
-[] - URL Component / Home / Drone List
-[] - EXTRA - Message icon on bell
-[] - EXTRA - Add polling to Drone Page
+- [ ] Font
+- [ ] Clean up components
+- [ ] Clean up styling
+- [ ] Add table component
+- [ ] Responsive design / Header
+- [ ] Responsive design / Search field
+- [ ] Social media footer
+- [ ] API connection
+- [ ] Icon color on Burger menu
+- [ ] Social media footer in Burger menu
+- [ ] Searchable input field
+- [ ] Dropdown with sort
+- [ ] URL Component / Home / Drone List
+- [ ] EXTRA - Message icon on bell
+- [ ] EXTRA - Add polling to Drone Page
 
 ### Improvements
 
-[] - Split up comon styling
-[] - Use for example Tailwind instead of writing our own styles
+- [ ] Split up comon styling
+- [ ] Use for example Tailwind instead of writing our own styles
