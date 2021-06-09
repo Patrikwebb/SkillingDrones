@@ -26,13 +26,17 @@
 .cards {
   display: flex;
 
+  flex-wrap: wrap;
+
   overflow-x: scroll;
 
   background-color: $background;
 
-  padding: rem(24) rem(24);
+  padding: rem(2) rem(24) rem(8) rem(24);
 
   @include bp(webLarge) {
-    padding: rem(24) rem(165);
+    max-height: rem(1000);
+
+    padding: rem(2) rem(165) rem(8) rem(165);
   }
 }

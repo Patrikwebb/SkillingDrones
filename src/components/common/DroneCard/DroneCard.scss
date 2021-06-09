@@ -11,14 +11,18 @@
   align-items: flex-start;
   padding: 0;
 
+  margin-top: rem(22);
+
   background: $white;
 
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.04);
-  border-radius: 15px;
+  border-radius: rem(15);
 }
 
 .cardImage {
   width: rem(260);
+  border-top-right-radius: rem(15);
+  border-top-left-radius: rem(15);
 }
 
 .cardContainer {

@@ -53,6 +53,7 @@ Common styles is inherit from https://tailwindcss.com/
 - [ ] Searchable input field
 - [ ] Dropdown with sort
 - [ ] URL Component / Home / Drone List
+- [ ] Skeleton text on Drone Data
 - [ ] EXTRA - Message icon on bell
 - [ ] EXTRA - Add random data updates with Time, Speed, Latitude and Longitude
 - [ ] EXTRA - Add polling to Drone Page
