@@ -94,7 +94,7 @@ function NavgationHeader() {
               <div
                 className={cx(styles.flex, styles.itemsCenter, styles.mlAuto)}
               >
-                <span onClick={() => infoToast("Not implemented")}>
+                <a onClick={() => infoToast("Not implemented")}>
                   <Icon
                     name={ICONS.questionMark}
                     className={styles.mr16}
@@ -102,9 +102,9 @@ function NavgationHeader() {
                       height: 16,
                     }}
                   />
-                </span>
+                </a>
 
-                <span onClick={() => infoToast("Not implemented")}>
+                <a onClick={() => infoToast("Not implemented")}>
                   <Icon
                     name={ICONS.settings}
                     className={styles.mr16}
@@ -112,9 +112,9 @@ function NavgationHeader() {
                       height: 16,
                     }}
                   />
-                </span>
+                </a>
 
-                <span onClick={() => infoToast("Not implemented")}>
+                <a onClick={() => infoToast("Not implemented")}>
                   <Icon
                     name={ICONS.bell}
                     className={styles.mr16}
@@ -122,16 +122,16 @@ function NavgationHeader() {
                       height: 16,
                     }}
                   />
-                </span>
+                </a>
 
-                <span onClick={() => infoToast("Not implemented")}>
+                <a onClick={() => infoToast("Not implemented")}>
                   <Icon
                     name={ICONS.avatar}
                     svgStyle={{
                       height: 24,
                     }}
                   />
-                </span>
+                </a>
               </div>
             </ul>
           </div>

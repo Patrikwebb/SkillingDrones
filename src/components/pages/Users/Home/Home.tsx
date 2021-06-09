@@ -30,60 +30,58 @@ function Home() {
   }, []);
 
   return (
-    <>
-      <div className={styles.wrapper}>
-        {/* Drone List header */}
-        <div className={cx(styles.droneListHeader, styles.flex)}>
-          <div className={cx(styles.text32, styles.bold, styles.black)}>
-            Drone List
-          </div>
-          <div
-            className={cx(styles.flex, styles.sortButtons, styles.mlAuto)}
-            onClick={() => setToggleSort(!toggleSort)}
-          >
-            <Icon
-              name={ICONS.sortAsCards}
-              className={cx(styles.sortButton, styles.p13, {
-                [styles.active]: toggleSort,
-              })}
-              svgStyle={{
-                fill: COLORS.black,
-                width: 14,
-              }}
-            />
-            <Icon
-              name={ICONS.sortAsList}
-              className={cx(styles.sortButton, styles.p13, {
-                [styles.active]: !toggleSort,
-              })}
-              svgStyle={{
-                width: 14,
-              }}
-            />
-          </div>
+    <div className={styles.wrapper}>
+      {/* Drone List header */}
+      <div className={cx(styles.droneListHeader, styles.flex)}>
+        <div className={cx(styles.text32, styles.bold, styles.black)}>
+          Drone List
         </div>
-
-        {/* List of Drones */}
-        <div className={styles.cards}>
-          {/* Drone Card */}
-
-          {drones !== null &&
-            drones.length > 0 &&
-            drones?.map((drone, index) => {
-              return (
-                <DroneCard
-                  key={drone.id + index}
-                  id={drone.id}
-                  image={drone.image}
-                  name={drone.name}
-                  battery={drone.batery}
-                  age={drone.age}
-                />
-              );
+        <div
+          className={cx(styles.flex, styles.sortButtons, styles.mlAuto)}
+          onClick={() => setToggleSort(!toggleSort)}
+        >
+          <Icon
+            name={ICONS.sortAsCards}
+            className={cx(styles.sortButton, styles.p13, {
+              [styles.active]: toggleSort,
             })}
+            svgStyle={{
+              fill: COLORS.black,
+              width: 14,
+            }}
+          />
+          <Icon
+            name={ICONS.sortAsList}
+            className={cx(styles.sortButton, styles.p13, {
+              [styles.active]: !toggleSort,
+            })}
+            svgStyle={{
+              width: 14,
+            }}
+          />
         </div>
       </div>
-    </>
+
+      {/* List of Drones */}
+      <div className={styles.content}>
+        {/* Drone Card */}
+
+        {drones !== null &&
+          drones.length > 0 &&
+          drones?.map((drone, index) => {
+            return (
+              <DroneCard
+                key={drone.id + index}
+                id={drone.id}
+                image={drone.image}
+                name={drone.name}
+                battery={drone.batery}
+                age={drone.age}
+              />
+            );
+          })}
+      </div>
+    </div>
   );
 }
 

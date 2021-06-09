@@ -43,6 +43,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "@types/react-virtualized": "^9.21.11",
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
     "framer-motion": "^1.6.2",
@@ -53,6 +54,7 @@
     "react-router-dom": "^5.1.2",
     "react-select": "^3.1.0",
     "react-toastify": "^6.0.5",
-    "react-use": "^13.27.0"
+    "react-use": "^13.27.0",
+    "react-virtualized": "^9.22.3"
   }
 }

@@ -17,7 +17,7 @@ class Drones {
   }
 
   public async getDrone() {
-    const response = await this.http.get<DroneDetailsI[]>(
+    const response = await this.http.get<DroneDetailsI>(
       "https://make-it-public.s3.eu-north-1.amazonaws.com/data.json"
     );
     return response.data;

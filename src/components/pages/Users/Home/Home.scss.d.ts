@@ -49,4 +49,4 @@ export const droneListHeader: string;
 export const sortButtons: string;
 export const sortButton: string;
 export const active: string;
-export const cards: string;
+export const content: string;
