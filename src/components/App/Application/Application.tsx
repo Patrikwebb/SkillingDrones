@@ -53,7 +53,8 @@ function Application() {
       designLayout &&
       designLayout !== systemContext.windowProps.designLayout
     ) {
-      systemContext.updateWindowProps(size.width, size.height, designLayout);
+      // systemContext.updateWindowProps(size.width, size.height, designLayout);
+      console.log("Update system context");
     }
   }
 

@@ -48,13 +48,13 @@ Common styles is inherit from https://tailwindcss.com/
 - [ ] Responsive design / Header
 - [ ] Responsive design / Search field
 - [ ] Social media footer
-- [ ] API connection
 - [ ] Icon color on Burger menu
 - [ ] Social media footer in Burger menu
 - [ ] Searchable input field
 - [ ] Dropdown with sort
 - [ ] URL Component / Home / Drone List
 - [ ] EXTRA - Message icon on bell
+- [ ] EXTRA - Add random data updates with Time, Speed, Latitude and Longitude
 - [ ] EXTRA - Add polling to Drone Page
 
 ### Improvements
