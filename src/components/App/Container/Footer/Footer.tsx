@@ -1,12 +1,14 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 import cx from "classnames";
 
 import { infoToast } from "components/common/Toast";
+import Icon, { ICONS } from "components/common/Icon";
+
+import { COLORS } from "variables";
 
 import * as styles from "./Footer.scss";
-import { Link } from "react-router-dom";
-import Icon, { ICONS } from "components/common/Icon";
 
 function Footer() {
   return (
@@ -67,16 +69,40 @@ function Footer() {
                 </ul>
               </div>
               <div>
-                <p className={styles.primary}>Services</p>
-                <ul className={styles.footersLists}>
+                <p className={styles.primary}>Follow Us</p>
+                <ul className={cx(styles.footersLists, styles.flex)}>
                   <li className={styles.black}>
-                    <a href="/om-oss">Om oss</a>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/SkillingTrading/"
+                    >
+                      <Icon
+                        name={ICONS.facebook}
+                        className={styles.mr20}
+                        svgStyle={{ height: 14, fill: COLORS.black }}
+                      />
+                    </a>
                   </li>
-                  <li
-                    className={styles.black}
-                    onClick={() => infoToast("Not implemented")}
-                  >
-                    <a>Inkassogram Connect</a>
+                  <li className={styles.black}>
+                    <a target="_blank" href="https://twitter.com/skilling">
+                      <Icon
+                        name={ICONS.twitter}
+                        className={styles.mr20}
+                        svgStyle={{ height: 14, fill: COLORS.black }}
+                      />
+                    </a>
+                  </li>
+                  <li className={styles.black}>
+                    <a
+                      target="_blank"
+                      href="https://www.instagram.com/skillingtrading/?hl=sv"
+                    >
+                      <Icon
+                        name={ICONS.instagram}
+                        className={styles.mr20}
+                        svgStyle={{ height: 14, fill: COLORS.black }}
+                      />
+                    </a>
                   </li>
                 </ul>
               </div>

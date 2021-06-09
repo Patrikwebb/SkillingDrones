@@ -20,6 +20,7 @@ export const mt10: string;
 export const mt16: string;
 export const mr8: string;
 export const mr16: string;
+export const mr20: string;
 export const mr60: string;
 export const mb20: string;
 export const ml24: string;

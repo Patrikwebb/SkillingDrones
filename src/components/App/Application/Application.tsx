@@ -47,14 +47,16 @@ function Application() {
       case size.width < BREAKPOINTS.webXXLarge:
         designLayout = DesignLayout.WebXXLarge;
         break;
+      default:
+        designLayout = DesignLayout.IphoneLarge;
+        break;
     }
     // Check so we dont update when we dont need to
     if (
       designLayout &&
       designLayout !== systemContext.windowProps.designLayout
     ) {
-      // systemContext.updateWindowProps(size.width, size.height, designLayout);
-      console.log("Update system context");
+      systemContext.updateWindowProps(size.width, size.height, designLayout);
     }
   }
 
