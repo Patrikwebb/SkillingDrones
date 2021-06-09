@@ -1,20 +1,33 @@
-import { useHistory } from "react-router";
 import * as React from "react";
 
-import Button from "components/common/Button";
+import Api from "api";
+import { DroneI } from "api/service/drones/interfaces";
+
 import Icon, { ICONS } from "components/common/Icon";
+import { errorToast } from "components/common/Toast";
 
 import cx from "classnames";
 
-import DroneImage from "assets/images/drone.png";
-
-import * as styles from "./Home.scss";
 import { COLORS } from "variables";
 
-function Home() {
-  const history = useHistory();
+import * as styles from "./Home.scss";
+import DroneCard from "components/common/DroneCard";
 
+function Home() {
   const [toggleSort, setToggleSort] = React.useState(false);
+  const [drones, setDrones] = React.useState(null as null | DroneI[]);
+
+  React.useEffect(() => {
+    // Get Drones
+    Api.service.drones
+      .getDrones()
+      .then((res) => {
+        setDrones(res.drones);
+      })
+      .catch((error) => {
+        errorToast(error);
+      });
+  }, []);
 
   return (
     <>
@@ -53,80 +66,21 @@ function Home() {
         {/* List of Drones */}
         <div className={styles.cards}>
           {/* Drone Card */}
-          <div className={styles.card}>
-            <img className={styles.cardImage} src={DroneImage} />
 
-            <span className={styles.cardContainer}>
-              <div className={styles.cardInfo}>
-                {/* Drone key props */}
-                <div
-                  className={cx(styles.flex, styles.flexOne, styles.flexColumn)}
-                >
-                  <p className={cx(styles.grey600, styles.textNormal)}>NAME:</p>
-                  <p className={cx(styles.grey600, styles.textNormal)}>
-                    BATTERY:
-                  </p>
-                  <p className={cx(styles.grey600, styles.textNormal)}>AGE:</p>
-                </div>
-
-                {/* Drone values */}
-                <div
-                  className={cx(styles.flex, styles.flexOne, styles.flexColumn)}
-                >
-                  <p className={cx(styles.textBold, styles.primary)}>
-                    DJI Mavic Mini
-                  </p>
-                  <p className={cx(styles.textBold, styles.black)}>1200</p>
-                  <p className={cx(styles.textBold, styles.black)}>1 Year</p>
-                </div>
-              </div>
-
-              <Button
-                onClick={() => history.push("/drone/1")}
-                className={styles.mt16}
-                type={Button.types.PRIMARY}
-              >
-                See Reports
-              </Button>
-            </span>
-          </div>
-
-          <div className={styles.card}>
-            <img className={styles.cardImage} src={DroneImage} />
-            <span className={styles.cardContainer}>
-              <div className={styles.cardInfo}>
-                {/* Drone key props */}
-                <div
-                  className={cx(styles.flex, styles.flexOne, styles.flexColumn)}
-                >
-                  <p className={cx(styles.grey600, styles.textNormal)}>NAME:</p>
-                  <p className={cx(styles.grey600, styles.textNormal)}>
-                    BATTERY:
-                  </p>
-                  <p className={cx(styles.grey600, styles.textNormal)}>AGE:</p>
-                </div>
-
-                {/* Drone values */}
-                <div
-                  className={cx(styles.flex, styles.flexOne, styles.flexColumn)}
-                >
-                  <p className={cx(styles.textBold, styles.primary)}>
-                    DJI Mavic Mini
-                  </p>
-                  <p className={cx(styles.textBold, styles.black)}>1200</p>
-                  <p className={cx(styles.textBold, styles.black)}>1 Year</p>
-                </div>
-              </div>
-
-              <Button
-                onClick={() => history.push("/drone/1")}
-                className={styles.mt16}
-                type={Button.types.PRIMARY}
-              >
-                See Reports
-              </Button>
-            </span>
-          </div>
+          {drones !== null &&
+            drones.length > 0 &&
+            drones?.map((drone, index) => {
+              return (
+                <DroneCard
+                  key={drone.id + index}
+                  id={drone.id}
+                  image={drone.image}
+                  name={drone.name}
+                  battery={drone.batery}
+                  age={drone.age}
+                />
+              );
+            })}
         </div>
       </div>
     </>
