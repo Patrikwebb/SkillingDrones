@@ -3,8 +3,8 @@ export let COLORS = {
   background: "#f6f9fc",
 
   success: "#00b089",
-  warning: "#fae608",
-  error: "#ef4e4e",
+  warning: "#f3bb1c",
+  error: "#F03738",
 
   black: "#1e2833",
   white: "#FFF",
@@ -12,6 +12,7 @@ export let COLORS = {
   grey400: "#9AA6AC",
   grey600: "#6E7C87",
   grey: "#f6f9fc",
+  green: "#3cc13b",
 };
 
 export enum BREAKPOINTS {

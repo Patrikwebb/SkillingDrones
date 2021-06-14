@@ -25,7 +25,11 @@
 }
 
 .tableRowHeader:first-child {
-  padding-left: rem(40);
+  padding-left: rem(0);
+
+  @include bp(webLarge) {
+    padding-left: rem(40);
+  }
 }
 
 .tableRowHeaderItem {
@@ -54,7 +58,11 @@
 
   background: $white;
 
-  padding-left: rem(40);
+  padding-left: rem(0);
+
+  @include bp(webLarge) {
+    padding-left: rem(40);
+  }
 }
 
 .tableTableRow:hover {

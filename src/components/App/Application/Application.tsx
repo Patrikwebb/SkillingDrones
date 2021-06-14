@@ -48,7 +48,7 @@ function Application() {
         designLayout = DesignLayout.WebXXLarge;
         break;
       default:
-        designLayout = DesignLayout.IphoneLarge;
+        designLayout = DesignLayout.WebXXLarge;
         break;
     }
     // Check so we dont update when we dont need to

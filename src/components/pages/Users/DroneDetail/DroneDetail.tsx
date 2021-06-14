@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import * as moment from "moment";
 import cx from "classnames";
 
 import Api from "api";
@@ -11,42 +12,12 @@ import Table from "components/common/Table";
 import { TableColumnI } from "components/common/Table/Table";
 
 import * as styles from "./DroneDetail.scss";
-
-const columns: TableColumnI[] = [
-  {
-    label: "time",
-    dataKey: "time",
-    width: 200,
-    flexgrow: 2,
-    fixed: true,
-  },
-  {
-    label: "Speed",
-    dataKey: "speed",
-    width: 100,
-    flexgrow: 2,
-  },
-  {
-    label: "Latitude",
-    dataKey: "latitude",
-    width: 200,
-    flexgrow: 2,
-  },
-  {
-    label: "Longitude",
-    dataKey: "longitude",
-    width: 200,
-    flexgrow: 2,
-  },
-  {
-    label: "Traffic",
-    dataKey: "traffic_conditions",
-    width: 200,
-    flexgrow: 2,
-  },
-];
+import { SystemContext } from "context/SystemContext";
+import { DesignLayout } from "context/SystemContext/SystemContext";
 
 function DroneDetail() {
+  const systemContext = React.useContext(SystemContext) as SystemContext;
+
   const [droneDetails, setDroneDetails] = React.useState(
     null as null | ReportI[]
   );
@@ -56,6 +27,94 @@ function DroneDetail() {
       setDroneDetails(res.reports);
     });
   }, []);
+
+  const columns: TableColumnI[] = [
+    {
+      label: "time",
+      dataKey: "time",
+      width: 150,
+      flexgrow: 2,
+      fixed: true,
+      renderer: timeCellRenderer,
+    },
+    {
+      label: "Speed",
+      dataKey: "speed",
+      width: 100,
+      flexgrow: 2,
+      renderer: decimalCellRenderer,
+    },
+    {
+      label: "Latitude",
+      dataKey: "latitude",
+      width: 120,
+      flexgrow: 2,
+      renderer: decimalCellRenderer,
+    },
+    {
+      label: "Longitude",
+      dataKey: "longitude",
+      width: 120,
+      flexgrow: 2,
+      renderer: decimalCellRenderer,
+    },
+    {
+      label: "Traffic",
+      dataKey: "traffic_conditions",
+      width: 200,
+      flexgrow: 2,
+      renderer: trafficCellRenderer,
+    },
+  ];
+
+  function trafficCellRenderer({ cellData, rowData }: any) {
+    return (
+      <span
+        className={cx(
+          styles.condition,
+          {
+            [styles.light]: cellData === "LIGHT",
+          },
+          {
+            [styles.heavy]: cellData === "HEAVY",
+          },
+          {
+            [styles.moderate]: cellData === "MODERATE",
+          }
+        )}
+      >
+        <p
+          className={cx(
+            styles.text12,
+            styles.lineHeight16,
+            {
+              [styles.green]: cellData === "LIGHT",
+            },
+            {
+              [styles.error]: cellData === "HEAVY",
+            },
+            {
+              [styles.warning]: cellData === "MODERATE",
+            }
+          )}
+        >
+          {systemContext.windowProps?.designLayout &&
+          systemContext.windowProps?.designLayout <= DesignLayout.IphoneLarge
+            ? cellData.charAt(0)
+            : cellData}
+        </p>
+      </span>
+    );
+  }
+
+  function decimalCellRenderer({ cellData, rowData }: any) {
+    return cellData.toFixed(2);
+  }
+
+  function timeCellRenderer({ cellData, rowData }: any) {
+    const date = moment(cellData).format("hh:mm a");
+    return date;
+  }
 
   return (
     <div className={styles.wrapper}>

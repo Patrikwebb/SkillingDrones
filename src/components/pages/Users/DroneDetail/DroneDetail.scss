@@ -1,6 +1,7 @@
 .wrapper {
   width: 100%;
 }
+
 .droneListHeader {
   margin: rem(16) rem(24);
 }
@@ -19,4 +20,47 @@
 
     padding: rem(24) rem(165);
   }
+}
+
+.condition {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: rem(4) rem(8);
+
+  width: fit-content;
+
+  text-transform: capitalize;
+
+  border-radius: rem(4);
+}
+
+.light {
+  border: 1px $green solid;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    $green;
+}
+
+.heavy {
+  border: 1px $error solid;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    $error;
+}
+
+.moderate {
+  border: 1px $warning solid;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    $warning;
 }

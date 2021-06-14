@@ -18,6 +18,9 @@
   font-weight: bold;
 }
 
+.lineHeight16 {
+  line-height: rem(16);
+}
 .lineHeight20 {
   line-height: rem(20);
 }
@@ -44,14 +47,23 @@
 .primary {
   color: $primary;
 }
-.grey600 {
-  color: $grey600;
-}
 .white {
   color: $white;
 }
 .black {
   color: $black;
+}
+.grey600 {
+  color: $grey600;
+}
+.green {
+  color: $green;
+}
+.error {
+  color: $error;
+}
+.warning {
+  color: $warning;
 }
 
 // Backgrounds
