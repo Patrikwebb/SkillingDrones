@@ -23,12 +23,33 @@ function Home() {
     Api.service.drones
       .getDrones()
       .then((res) => {
-        setDrones(res.drones);
+        // Add default sort by Age
+        const drones = res.drones.sort((a, b) => {
+          return a.age - b.age;
+        });
+        setDrones(drones);
       })
       .catch((error) => {
         errorToast(error);
       });
   }, []);
+
+  const sortDroneList = (sortKey: string) => {
+    switch (sortKey) {
+      case "age":
+        setDrones((oldDrones) => {
+          let newDrones: DroneI[] = JSON.parse(JSON.stringify(oldDrones));
+          return newDrones.sort((a, b) => a.age - b.age);
+        });
+        break;
+      case "battery":
+        setDrones((oldDrones) => {
+          let newDrones: DroneI[] = JSON.parse(JSON.stringify(oldDrones));
+          return newDrones.sort((a, b) => a.batery - b.batery);
+        });
+        break;
+    }
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -42,13 +63,13 @@ function Home() {
             items={[
               { value: "age", label: "Sort by Age" },
               {
-                value: "year",
-                label: "Sort by Year",
+                value: "battery",
+                label: "Sort by Battery",
               },
             ]}
-            defaultInputValue={"Sort by Year"}
+            defaultInputValue={"Sort by Age"}
             onChange={(e) => {
-              console.log("TODO");
+              sortDroneList(e);
             }}
           />
 
@@ -88,7 +109,7 @@ function Home() {
           drones?.map((drone, index) => {
             return (
               <DroneCard
-                key={drone.id + index}
+                key={index}
                 id={drone.id}
                 image={drone.image}
                 name={drone.name}
