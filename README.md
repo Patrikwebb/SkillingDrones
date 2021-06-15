@@ -49,7 +49,6 @@ Common styles is inherit from https://tailwindcss.com/
 - [ ] Icon color on Burger menu
 - [ ] Social media footer in Burger menu
 - [ ] Searchable input field
-- [ ] Dropdown with sort
 - [ ] URL Component / Home / Drone List
 - [ ] Skeleton text on Drone Data
 - [ ] EXTRA - Message icon on bell
