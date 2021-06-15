@@ -1,0 +1,26 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: rem(88);
+  height: rem(88);
+  fill: $grey300;
+}
+
+.header {
+  @include Text14;
+  font-weight: bold;
+  text-align: center;
+  color: $grey600;
+}
+
+.message {
+  @include Text14;
+  text-align: center;
+  color: $grey600;
+  max-width: rem(460);
+}

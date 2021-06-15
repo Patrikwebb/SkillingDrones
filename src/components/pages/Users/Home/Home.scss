@@ -34,9 +34,17 @@
 
   padding: rem(2) rem(24) rem(8) rem(24);
 
-  @include bp(webLarge) {
-    max-height: rem(1000);
+  max-height: rem(1000);
 
+  @include bp(webLarge) {
     padding: rem(2) rem(165) rem(8) rem(165);
   }
+}
+
+.input {
+  position: fixed;
+  top: 4px;
+  left: 244px;
+  z-index: 1000;
+  margin-left: rem(86);
 }

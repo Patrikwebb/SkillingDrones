@@ -4,12 +4,11 @@ import cx from "classnames";
 
 import Icon, { ICONS } from "components/common/Icon";
 
-import * as styles from "./NavgationHeader.scss";
-
 import { SystemContext } from "context/SystemContext";
 import { DesignLayout } from "context/SystemContext/SystemContext";
 import { infoToast } from "../Toast";
-// import { COLORS } from "variables";
+
+import * as styles from "./NavgationHeader.scss";
 
 interface NavigationUrls {
   name: string;
@@ -81,14 +80,6 @@ function NavgationHeader() {
                   }}
                 />
               </Link>
-
-              <Icon
-                name={ICONS.searchInput}
-                style={{ paddingLeft: 86 }}
-                svgStyle={{
-                  height: 32,
-                }}
-              />
 
               {/* Question, Settings, Notifcation and User Icon */}
               <div

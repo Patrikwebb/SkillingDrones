@@ -4,6 +4,7 @@ export interface DroneI {
   batery: number;
   age: number;
   image: string;
+  show?: boolean;
 }
 
 export interface DronesI {

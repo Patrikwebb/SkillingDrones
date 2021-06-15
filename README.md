@@ -29,9 +29,14 @@ _ReactJS with Hooks API_
   - Drone Detail's
 - React components
   - Button
+  - DroneCard
+  - DropDown
   - Icon
+  - Input with Icon support
   - NavigatioHeader + Burger meny
   - Toast
+  - Table
+  - EmptyState
 - SystemContext that handles response design in Javascript
 - Sass Mixins that handles response design in CSS
 
@@ -48,14 +53,15 @@ Common styles is inherit from https://tailwindcss.com/
 - [ ] Responsive design / Search field
 - [ ] Icon color on Burger menu
 - [ ] Social media footer in Burger menu
-- [ ] Searchable input field
 - [ ] URL Component / Home / Drone List
 - [ ] Skeleton text on Drone Data
 - [ ] EXTRA - Message icon on bell
 - [ ] EXTRA - Add random data updates with Time, Speed, Latitude and Longitude
 - [ ] EXTRA - Add polling to Drone Page
+- [ ] EXTRA - Add React.memo() to minimize renders
 
 ### Improvements
 
 - [ ] Split up comon styling
 - [ ] Use for example Tailwind instead of writing our own styles
+- [ ] Change logic for search to something like smart loadash functions or key values store

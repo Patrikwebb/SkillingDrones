@@ -1,0 +1,102 @@
+.input {
+  width: 100%;
+}
+
+.inputWrapper {
+  height: rem(40);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  width: rem(24);
+  height: rem(24);
+
+  fill: $grey400;
+
+  transition: fill 0.1s, border 0.1s;
+  transform: translateY(-50%);
+
+  &.err {
+    fill: $error;
+  }
+
+  &.success {
+    fill: $success;
+  }
+
+  &.focus {
+    fill: $grey400;
+  }
+}
+
+.leftIconPos {
+  @extend .icon;
+
+  left: rem(12);
+}
+
+.rightIconPos {
+  @extend .icon;
+
+  right: rem(12);
+}
+
+.textField {
+  @include Text14;
+
+  width: rem(220);
+  height: rem(32);
+
+  padding: rem(8);
+
+  outline: none;
+  box-shadow: none;
+  border: 1px solid $grey400;
+  border-radius: rem(4);
+
+  appearance: none;
+  background: transparent;
+  transition: color 0.3s, border 0.3s;
+
+  &.left-icon {
+    padding-left: rem(40);
+  }
+
+  &.right-icon {
+    padding-right: rem(40);
+  }
+
+  &.err {
+    border-color: $error;
+    color: $error;
+  }
+
+  &.success {
+    border-color: $success;
+    color: $success;
+  }
+
+  &:focus {
+    box-shadow: none;
+    color: $black;
+  }
+
+  @include bp(webMedium) {
+    width: rem(375);
+  }
+}
+
+.disabledTextField {
+  width: 100%;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid $grey400;
+  border-radius: rem(4);
+  height: rem(40);
+  font-size: rem(18);
+  padding: rem(8);
+  transition: color 0.3s, border 0.3s;
+  appearance: none;
+  background: $grey400;
+}

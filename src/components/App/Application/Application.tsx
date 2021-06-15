@@ -57,6 +57,7 @@ function Application() {
       designLayout !== systemContext.windowProps.designLayout
     ) {
       systemContext.updateWindowProps(size.width, size.height, designLayout);
+      console.log(size.width, size.height, DesignLayout[designLayout]);
     }
   }
 
