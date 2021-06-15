@@ -22,6 +22,13 @@ interface BackgroundColorI {
 }
 
 const DropDown = (props: DropDownItemsI) => {
+  const customStyles = {
+    control: (base: any) => ({
+      ...base,
+      height: 42,
+    }),
+  };
+
   const [selectedOption, setSelectedOption] = React.useState("" as any);
   const [indicatorSeparator, setIndicatorSeparator] = React.useState({});
 
@@ -53,13 +60,14 @@ const DropDown = (props: DropDownItemsI) => {
       onChange={handleChange}
       options={props.items}
       components={indicatorSeparator}
+      styles={customStyles}
       theme={(theme) => ({
         ...theme,
         borderRadius: 6,
         colors: {
           ...theme.colors,
-          primary25: COLORS.primary,
-          primary: COLORS.,
+          primary25: COLORS.primary500,
+          primary: COLORS.primary200,
         },
       })}
     />
