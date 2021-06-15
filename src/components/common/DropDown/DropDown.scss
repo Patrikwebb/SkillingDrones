@@ -1,0 +1,9 @@
+ .dropDownBoxContainer {
+  @include Text16;
+  color: $black;
+
+  width: rem(140);
+  height: rem(42);
+
+  margin-right: rem(12);
+}

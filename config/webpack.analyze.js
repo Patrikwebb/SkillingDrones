@@ -2,8 +2,8 @@ const path = require("path");
 const rootPath = path.resolve(__dirname, "../");
 const srcPath = path.resolve(__dirname, "../src");
 
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 // This plugin removes the contents of a folder before building
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -25,7 +25,7 @@ module.exports = {
 
   output: {
     filename: common.output.filename,
-    path: rootPath + "/stats"
+    path: rootPath + "/stats",
   },
 
   plugins: [
@@ -34,12 +34,12 @@ module.exports = {
       generateStatsFile: true,
       openAnalyzer: false,
       reportFilename: "stats-report.html",
-      statsFilename: "stats.json"
+      statsFilename: "stats.json",
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: srcPath + "/template.html"
+      template: srcPath + "/template.html",
     }),
-    common.ignoreMomentLocales
-  ]
+    common.ignoreMomentLocales,
+  ],
 };

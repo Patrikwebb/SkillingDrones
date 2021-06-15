@@ -1,7 +1,8 @@
 export let COLORS = {
   primary: "#6308F7",
+  primaryLight: "#873cff".
   background: "#f6f9fc",
-
+  
   success: "#00b089",
   warning: "#f3bb1c",
   error: "#F03738",

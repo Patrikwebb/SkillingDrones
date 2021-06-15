@@ -12,6 +12,7 @@ import { COLORS } from "variables";
 
 import * as styles from "./Home.scss";
 import DroneCard from "components/common/DroneCard";
+import DropDown from "components/common/DropDown";
 
 function Home() {
   const [toggleSort, setToggleSort] = React.useState(false);
@@ -36,29 +37,45 @@ function Home() {
         <div className={cx(styles.text32, styles.bold, styles.black)}>
           Drone List
         </div>
-        <div
-          className={cx(styles.flex, styles.sortButtons, styles.mlAuto)}
-          onClick={() => setToggleSort(!toggleSort)}
-        >
-          <Icon
-            name={ICONS.sortAsCards}
-            className={cx(styles.sortButton, styles.p13, {
-              [styles.active]: toggleSort,
-            })}
-            svgStyle={{
-              fill: COLORS.black,
-              width: 14,
+        <div className={cx(styles.flex, styles.mlAuto)}>
+          <DropDown
+            items={[
+              { value: "age", label: "Sort by Age" },
+              {
+                value: "year",
+                label: "Sort by Year",
+              },
+            ]}
+            defaultInputValue={"Sort by Year"}
+            onChange={(e) => {
+              console.log("TODO");
             }}
           />
-          <Icon
-            name={ICONS.sortAsList}
-            className={cx(styles.sortButton, styles.p13, {
-              [styles.active]: !toggleSort,
-            })}
-            svgStyle={{
-              width: 14,
-            }}
-          />
+
+          <div
+            onClick={() => setToggleSort(!toggleSort)}
+            className={cx(styles.sortButtons, styles.flex)}
+          >
+            <Icon
+              name={ICONS.sortAsCards}
+              className={cx(styles.sortButton, styles.p13, {
+                [styles.active]: toggleSort,
+              })}
+              svgStyle={{
+                fill: COLORS.black,
+                width: 14,
+              }}
+            />
+            <Icon
+              name={ICONS.sortAsList}
+              className={cx(styles.sortButton, styles.p13, {
+                [styles.active]: !toggleSort,
+              })}
+              svgStyle={{
+                width: 14,
+              }}
+            />
+          </div>
         </div>
       </div>
 
