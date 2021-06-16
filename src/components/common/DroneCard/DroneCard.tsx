@@ -49,7 +49,7 @@ function DroneCard(props: DroneCardPropsI) {
         </div>
 
         <Button
-          onClick={() => history.push(`/drone/${props.id}`)}
+          onClick={() => history.push(`/drone/${props.id}/${props.name}`)}
           className={styles.mt16}
           type={Button.types.PRIMARY}
         >

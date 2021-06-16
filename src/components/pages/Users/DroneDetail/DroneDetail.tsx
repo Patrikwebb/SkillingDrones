@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useParams } from "react-router";
 
 import { AnimatePresence, motion } from "framer-motion";
 import * as moment from "moment";
@@ -20,13 +21,19 @@ import * as styles from "./DroneDetail.scss";
 function DroneDetail() {
   const systemContext = React.useContext(SystemContext) as SystemContext;
 
+  const params = useParams<{ id: string; name: string }>();
+
   const [droneDetails, setDroneDetails] = React.useState(
     null as null | ReportI[]
   );
 
   React.useEffect(() => {
     Api.service.drones.getDrone().then((res) => {
-      setDroneDetails(res.reports);
+      // Filter out Drone data
+      const droneData = res.reports.filter(
+        (drone) => drone.drone_id === Number(params.id)
+      );
+      setDroneDetails(droneData);
     });
   }, []);
 
@@ -123,7 +130,7 @@ function DroneDetail() {
       {/* Drone List header */}
       <div className={cx(styles.droneListHeader, styles.flex)}>
         <div className={cx(styles.text32, styles.bold, styles.black)}>
-          DJI Air 2S
+          {params.name}
         </div>
 
         <img style={{ height: 40, marginLeft: 24 }} src={DroneImage} />

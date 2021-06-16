@@ -14,7 +14,7 @@ function UserRoutes() {
           <Route exact path="/home">
             <Home />
           </Route>
-          <Route exact path="/drone/:id">
+          <Route exact path="/drone/:id/:name">
             <DroneDetail />
           </Route>
           <Route exact path="/">
