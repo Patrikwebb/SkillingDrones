@@ -9,6 +9,7 @@ import { DesignLayout } from "context/SystemContext/SystemContext";
 import { infoToast } from "../Toast";
 
 import * as styles from "./NavgationHeader.scss";
+import { COLORS } from "variables";
 
 interface NavigationUrls {
   name: string;
@@ -142,12 +143,14 @@ function NavgationHeader() {
                 name={ICONS.logoFire}
                 svgStyle={{
                   height: 24,
+                  fill: showBurgerMeny ? COLORS.white : COLORS.primary,
                 }}
               />
               <Icon
                 name={ICONS.logoTitle}
                 svgStyle={{
                   height: 24,
+                  fill: showBurgerMeny ? COLORS.white : COLORS.primary,
                 }}
               />
             </Link>
