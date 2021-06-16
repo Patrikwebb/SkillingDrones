@@ -52,13 +52,12 @@ Common styles is inherit from https://tailwindcss.com/
 - [ ] Clean up styling
 - [ ] Responsive design / Header
 - [ ] Responsive design / Search field
-- [ ] Icon color on Burger menu
-- [ ] Social media footer in Burger menu
 - [ ] URL Component / Home / Drone List
-- [ ] EXTRA - Message icon on bell
 - [ ] EXTRA - Add random data updates with Time, Speed, Latitude and Longitude
 - [ ] EXTRA - Add polling to Drone Page
 - [ ] EXTRA - Add React.memo() to minimize renders
+- [ ] EXTRA - Message icon on bell
+- [ ] EXTRA - Social media footer in Burger menu
 
 ### Improvements
 

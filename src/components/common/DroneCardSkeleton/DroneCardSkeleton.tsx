@@ -25,7 +25,7 @@ const RenderComponent = (props: DroneCardSkeletonPropsI) => {
   for (let index = 0; index < props.count; index++) {
     listOfElements.push(
       // Combine key cause drone.id can be the same
-      <div className={styles.card}>
+      <div key={index} className={styles.card}>
         <div className={styles.cardImage}>
           {props.image && <Skeleton height={138} />}
         </div>
