@@ -4,6 +4,7 @@ import facebookSvg from "assets/svg/facebook.svg";
 import instagramSvg from "assets/svg/instagram.svg";
 import logoTitleSvg from "assets/svg/logoTitle.svg";
 import logoFireSvg from "assets/svg/logoFire.svg";
+import navigationArrowSvg from "assets/svg/navigationArrow.svg";
 import questionMarkSvg from "assets/svg/questionMark.svg";
 import searchInputSvg from "assets/svg/searchInput.svg";
 import settingsSvg from "assets/svg/settings.svg";
@@ -22,6 +23,7 @@ interface IconI {
   instagram: SvgType;
   logoTitle: SvgType;
   logoFire: SvgType;
+  navigationArrow: SvgType;
   questionMark: SvgType;
   searchInput: SvgType;
   settings: SvgType;
@@ -37,6 +39,7 @@ const ICONS: IconI = {
   instagram: instagramSvg,
   logoTitle: logoTitleSvg,
   logoFire: logoFireSvg,
+  navigationArrow: navigationArrowSvg,
   questionMark: questionMarkSvg,
   searchInput: searchInputSvg,
   settings: settingsSvg,

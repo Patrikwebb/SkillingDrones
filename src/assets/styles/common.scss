@@ -75,6 +75,9 @@
 .my-4 {
   margin: rem(4) 0;
 }
+.my-8 {
+  margin: rem(8) 0;
+}
 .my-16 {
   margin: rem(16) 0;
 }
@@ -102,6 +105,9 @@
 .mb-20 {
   margin-bottom: rem(20);
 }
+.ml-10 {
+  margin-left: rem(10);
+}
 .ml-24 {
   margin-left: rem(24);
 }
@@ -112,11 +118,17 @@
 .py-4 {
   padding: rem(4) 0;
 }
+.py-8 {
+  padding: rem(8) 0;
+}
 .p-13 {
   padding: rem(13);
 }
 .pr-30 {
   padding-right: rem(30);
+}
+.pl-20 {
+  padding-left: rem(20);
 }
 .pl-30 {
   padding-left: rem(30);
@@ -174,4 +186,9 @@
 }
 .mlAuto {
   margin-left: auto;
+}
+
+// Decorations
+.decorationNone {
+  text-decoration: none;
 }

@@ -1,5 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import { useRouteMatch } from "react-router";
+
 import cx from "classnames";
 
 import Icon, { ICONS } from "components/common/Icon";
@@ -26,6 +28,8 @@ const urls: NavigationUrls[] = [
 
 function NavgationHeader() {
   const systemContext = React.useContext(SystemContext) as SystemContext;
+
+  let routeMatch = useRouteMatch("/drone");
 
   const [showBurgerMeny, setshowBurgerMeny] = React.useState(false);
   const [scrollBelow90px, setScrollBelow90px] = React.useState(false);
@@ -128,6 +132,44 @@ function NavgationHeader() {
                 </a>
               </div>
             </ul>
+            <div className={styles.routing}>
+              <Link
+                className={cx(
+                  styles.flex,
+                  styles.decorationNone,
+                  styles.itemsCenter
+                )}
+                to={"/"}
+              >
+                <span
+                  style={{
+                    fontSize: 14,
+                    fontWeight: "bold",
+                    textDecoration: "none",
+                    color: "#6e7c87",
+                  }}
+                >
+                  Home
+                </span>
+                <Icon className={styles.ml10} name={ICONS.navigationArrow} />
+                <span className={cx(styles.text14, styles.bold, styles.pl20)}>
+                  Drone List
+                </span>
+                {routeMatch && (
+                  <>
+                    <Icon
+                      className={styles.ml10}
+                      name={ICONS.navigationArrow}
+                    />
+                    <span
+                      className={cx(styles.text14, styles.bold, styles.pl20)}
+                    >
+                      {"Drone"}
+                    </span>
+                  </>
+                )}
+              </Link>
+            </div>
           </div>
         ) : (
           <div className={styles.innerContentBurger}>
