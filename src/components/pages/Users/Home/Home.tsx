@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { AnimatePresence, motion } from "framer-motion";
+
 import Api from "api";
 import { DroneI } from "api/service/drones/interfaces";
 
@@ -10,6 +12,7 @@ import Icon, { ICONS } from "components/common/Icon";
 import { errorToast } from "components/common/Toast";
 import DroneCard from "components/common/DroneCard";
 import DropDown from "components/common/DropDown";
+import EmptyState from "components/common/EmptyState";
 import Input from "components/common/Input";
 
 import cx from "classnames";
@@ -17,7 +20,6 @@ import cx from "classnames";
 import { COLORS } from "variables";
 
 import * as styles from "./Home.scss";
-import EmptyState from "components/common/EmptyState";
 
 function Home() {
   const systemContext = React.useContext(SystemContext) as SystemContext;
@@ -176,38 +178,48 @@ function Home() {
         </div>
       </div>
 
-      {/* List of Drones */}
-      <div className={styles.content}>
-        {/* Drone Card */}
+      {/* List of Drones - With Motion animation*/}
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <div className={styles.content}>
+            {drones !== null &&
+              drones.length > 0 &&
+              drones
+                ?.filter((drone) => drone.show)
+                .map((drone, index) => {
+                  {
+                    /* Drone Card */
+                  }
+                  return (
+                    <DroneCard
+                      key={index}
+                      id={drone.id}
+                      image={drone.image}
+                      name={drone.name}
+                      battery={drone.batery}
+                      age={drone.age}
+                    />
+                  );
+                })}
 
-        {drones !== null &&
-          drones.length > 0 &&
-          drones
-            ?.filter((drone) => drone.show)
-            .map((drone, index) => {
-              return (
-                <DroneCard
-                  key={index}
-                  id={drone.id}
-                  image={drone.image}
-                  name={drone.name}
-                  battery={drone.batery}
-                  age={drone.age}
+            {/* Empty state for Drone list */}
+            {isDroneListEmpty && (
+              <div style={{ minHeight: 400, display: "flex" }}>
+                <EmptyState
+                  icon={ICONS.logoFire}
+                  title="No result"
+                  message={"No match for search key: " + searchInput}
                 />
-              );
-            })}
-
-        {/* Empty state for Drone list */}
-        {isDroneListEmpty && (
-          <div style={{ minHeight: 400, display: "flex" }}>
-            <EmptyState
-              icon={ICONS.logoFire}
-              title="No result"
-              message={"No match for search key: " + searchInput}
-            />
+              </div>
+            )}
           </div>
-        )}
-      </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

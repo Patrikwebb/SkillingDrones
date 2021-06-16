@@ -1,19 +1,21 @@
 import * as React from "react";
 
+import { AnimatePresence, motion } from "framer-motion";
 import * as moment from "moment";
 import cx from "classnames";
 
 import Api from "api";
 import { ReportI } from "api/service/drones/interfaces";
 
-import DroneImage from "assets/images/drone.png";
+import { SystemContext } from "context/SystemContext";
+import { DesignLayout } from "context/SystemContext/SystemContext";
 
 import Table from "components/common/Table";
 import { TableColumnI } from "components/common/Table/Table";
 
+import DroneImage from "assets/images/drone.png";
+
 import * as styles from "./DroneDetail.scss";
-import { SystemContext } from "context/SystemContext";
-import { DesignLayout } from "context/SystemContext/SystemContext";
 
 function DroneDetail() {
   const systemContext = React.useContext(SystemContext) as SystemContext;
@@ -127,13 +129,22 @@ function DroneDetail() {
         <img style={{ height: 40, marginLeft: 24 }} src={DroneImage} />
       </div>
 
-      {/* List of Drones */}
-      <div className={styles.content}>
-        <Table
-          columns={columns}
-          rowData={droneDetails && droneDetails ? droneDetails : []}
-        />
-      </div>
+      {/* Drone Details Table - With Motion animation */}
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <div className={styles.content}>
+            <Table
+              columns={columns}
+              rowData={droneDetails && droneDetails ? droneDetails : []}
+            />
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }
