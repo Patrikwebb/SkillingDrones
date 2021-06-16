@@ -39,6 +39,7 @@ _ReactJS with Hooks API_
   - EmptyState
 - SystemContext that handles response design in Javascript
 - Sass Mixins that handles response design in CSS
+- Framer motion for Animations
 
 ### Styleguide
 
@@ -54,7 +55,6 @@ Common styles is inherit from https://tailwindcss.com/
 - [ ] Icon color on Burger menu
 - [ ] Social media footer in Burger menu
 - [ ] URL Component / Home / Drone List
-- [ ] Skeleton text on Drone Data
 - [ ] EXTRA - Message icon on bell
 - [ ] EXTRA - Add random data updates with Time, Speed, Latitude and Longitude
 - [ ] EXTRA - Add polling to Drone Page

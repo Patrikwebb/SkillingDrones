@@ -20,6 +20,7 @@ import cx from "classnames";
 import { COLORS } from "variables";
 
 import * as styles from "./Home.scss";
+import DroneCardSkeleton from "components/common/DroneCardSkeleton";
 
 function Home() {
   const systemContext = React.useContext(SystemContext) as SystemContext;
@@ -42,6 +43,7 @@ function Home() {
         for (var i = 0; i < drones.length; i++) {
           drones[i].show = true;
         }
+
         setDrones(drones);
       })
       .catch((error) => {
@@ -187,8 +189,7 @@ function Home() {
           transition={{ duration: 1 }}
         >
           <div className={styles.content}>
-            {drones !== null &&
-              drones.length > 0 &&
+            {drones !== null && drones.length > 0 ? (
               drones
                 ?.filter((drone) => drone.show)
                 .map((drone, index) => {
@@ -205,7 +206,10 @@ function Home() {
                       age={drone.age}
                     />
                   );
-                })}
+                })
+            ) : (
+              <DroneCardSkeleton count={12} image={true} />
+            )}
 
             {/* Empty state for Drone list */}
             {isDroneListEmpty && (
