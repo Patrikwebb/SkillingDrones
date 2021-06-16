@@ -24,12 +24,14 @@ function Footer() {
                   className={styles.mr8}
                   svgStyle={{
                     height: 24,
+                    fill: COLORS.primary,
                   }}
                 />
                 <Icon
                   name={ICONS.logoTitle}
                   svgStyle={{
                     height: 24,
+                    fill: COLORS.primary,
                   }}
                 />
               </Link>
